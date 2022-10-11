@@ -1,4 +1,4 @@
-package handlers;
+package delete;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

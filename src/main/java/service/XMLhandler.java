@@ -1,7 +1,7 @@
-package handlers;
+package service;
 
 import domain.CourseTable;
-import domain.CurrencyExchange;
+import domain.CustomCurrency;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.List;
 
 public class XMLhandler {
-    public static List<CurrencyExchange> convert(Class c, String filename) {
+    public static List<CustomCurrency> convert(Class c, String filename) {
         try {
             var context = JAXBContext.newInstance(c);
             Unmarshaller un = context.createUnmarshaller();

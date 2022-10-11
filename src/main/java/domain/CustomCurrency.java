@@ -2,12 +2,11 @@ package domain;
 
 import javax.xml.bind.annotation.*;
 import java.util.Currency;
-import java.util.Locale;
 
 //@Builder
 @XmlRootElement(name = "pozycja")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CurrencyExchange {
+public class CustomCurrency {
 
     @XmlElement(name = "nazwa_waluty")
     private String name;
@@ -62,7 +61,7 @@ public class CurrencyExchange {
 
     @Override
     public String toString() {
-        return "domain.CurrencyExchange{" +
+        return "handlers.CurrencyExchange{" +
                 "name='" + name + '\'' +
                 ", conversionRate=" + conversionRate +
                 ", code='" + code + '\'' +
