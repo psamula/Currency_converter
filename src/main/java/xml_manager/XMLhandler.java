@@ -1,4 +1,4 @@
-package XMLmanager;
+package xml_manager;
 
 import domain.CourseTable;
 import domain.CustomCurrency;
