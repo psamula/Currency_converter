@@ -33,16 +33,7 @@ public class UserInterface implements IUserInterface {
             }
 
             var finalAmount = currencyHandler.exchange(choice, chosenAmount, destCurrChoice);
-            System.out.println(finalAmount);/*
-            if (finalAmount == -1) {
-                System.out.println("Wrong amount!");
-                return;
-            }
-            if (finalAmount == -2) {
-                System.out.println("Wrong currency!");
-                return;
-            }*/
-
+            System.out.println(finalAmount);
         }
     }
 }

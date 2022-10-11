@@ -7,20 +7,6 @@ import java.math.RoundingMode;
 
 
 public class CurrencyExchange {
-//
-//    private CustomCurrency customCurrencyFrom;
-//    private CustomCurrency customCurrencyTo;
-    public CurrencyExchange(/*String currencyCodeFrom, String currencyCodeTo, BigDecimal amount*/) {
-//
-//        this.customCurrencyFrom = CurrencyDao.getInstance()
-//                .getCurrencyByCode(currencyCodeFrom);
-//        this.customCurrencyTo = CurrencyDao.getInstance()
-//                .getCurrencyByCode(currencyCodeTo);
-//
-//        if (!checkFields()) {
-//            throw new NoSuchElementException("Invalid currency code!");
-        }
-
     public static BigDecimal convertCurrencies(CustomCurrency c1, CustomCurrency c2, BigDecimal amount) {
         var c1e =  BigDecimal.valueOf(c1.getExchangeRate());
         var c2e =  BigDecimal.valueOf(c2.getExchangeRate());
@@ -35,15 +21,5 @@ public class CurrencyExchange {
                 .setScale(2, RoundingMode.HALF_EVEN);
 
         return result;
-//        return formatCurrency(result, c2.getCurrency());
     }
-
-
-    /*
-    public BigDecimal getRelativeConversionRate() {
-
-    }
-    private boolean checkFields() {
-        return !(this.customCurrencyFrom == null || customCurrencyTo == null);
-    }*/
 }
