@@ -1,12 +1,4 @@
-package delete;
-
-import dao.CurrencyDao;
-import domain.CustomCurrency;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.NumberFormat;
-import java.util.Locale;
+package delete_unused;
 
 
 public class DefaultTransactionHandler/* implements TransactionHandler*/ {

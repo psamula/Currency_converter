@@ -1,6 +1,4 @@
-package delete;
-
-import java.math.BigDecimal;
+package delete_unused;
 
 public interface TransactionHandler {
 

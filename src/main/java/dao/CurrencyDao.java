@@ -1,9 +1,9 @@
 package dao;
 
+import XMLmanager.XMLhandler;
 import domain.CourseTable;
 import domain.CustomCurrency;
-import service.XMLhandler;
-
+import XMLmanager.XMLhandler;
 import java.util.*;
 
 public class CurrencyDao implements ICurrencyDao {

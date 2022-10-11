@@ -1,6 +1,8 @@
 package service;
 
 import dao.ICurrencyDao;
+import service.converter_tools.CurrencyExchange;
+import service.converter_tools.CurrencyFormatter;
 
 import java.math.BigDecimal;
 
