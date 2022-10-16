@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class UserInterface implements IUserInterface {
     private final Scanner sc;
-    private final ICurrencyService currencyHandler;
+    private final ICurrencyService currencyService;
 
-    public UserInterface(Scanner sc, ICurrencyService currencyHandler) {
+    public UserInterface(Scanner sc, ICurrencyService currencyService) {
         this.sc = sc;
-        this.currencyHandler = currencyHandler;
+        this.currencyService = currencyService;
     }
 
     public void run() {
@@ -30,7 +30,7 @@ public class UserInterface implements IUserInterface {
 
                 System.out.println("Which currency do you want to exchange to? [code]");
                 String destCurrChoice = prepUserInput(sc.nextLine());
-                var finalAmount = currencyHandler.exchange(choice, chosenAmount, destCurrChoice);
+                var finalAmount = currencyService.exchange(choice, chosenAmount, destCurrChoice);
                 System.out.println("You'll receive: " + finalAmount);
             }
             catch (InvalidInputException iie) {
