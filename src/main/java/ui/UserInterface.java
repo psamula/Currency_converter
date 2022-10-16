@@ -1,6 +1,6 @@
 package ui;
 
-import Exceptions.InvalidInputException;
+import exceptions.InvalidInputException;
 import service.ICurrencyService;
 import validators.CustomValidator;
 

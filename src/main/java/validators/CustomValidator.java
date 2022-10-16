@@ -1,7 +1,7 @@
 package validators;
 
-import Exceptions.CurrencyNotFoundException;
-import Exceptions.NegativeAmountException;
+import exceptions.CurrencyNotFoundException;
+import exceptions.NegativeAmountException;
 import domain.ICustomCurrency;
 
 import java.math.BigDecimal;

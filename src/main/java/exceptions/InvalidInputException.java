@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 public class InvalidInputException extends RuntimeException {
     public InvalidInputException(String message, Throwable cause) {
