@@ -1,14 +1,14 @@
 package dao;
 
-import domain.CustomCurrency;
 
+import domain.ICustomCurrency;
 import java.util.List;
 import java.util.Map;
 
 public interface ICurrencyDao {
-     CustomCurrency getCurrencyByCode(String code);
-     double getExchangeRateByCode(String code);
-     Map<String, CustomCurrency> getCurrencyMap();
-     List<CustomCurrency> getCurrencyList();
+     ICustomCurrency getCurrencyByCode(String code);
+     String getExchangeRateByCode(String code);
+     Map<String, ICustomCurrency> getCurrencyMap();
+     List<ICustomCurrency> getCurrencyList();
 
 }

@@ -1,15 +1,16 @@
 package service.converter_tools;
 
 import domain.CustomCurrency;
+import domain.ICustomCurrency;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 
 public class CurrencyExchange {
-    public static BigDecimal convertCurrencies(CustomCurrency c1, CustomCurrency c2, BigDecimal amount) {
-        var c1e =  BigDecimal.valueOf(c1.getExchangeRate());
-        var c2e =  BigDecimal.valueOf(c2.getExchangeRate());
+    public static BigDecimal convertCurrencies(ICustomCurrency c1, ICustomCurrency c2, BigDecimal amount) {
+        var c1e =  new BigDecimal(c1.getExchangeRate().replace(",", "."));
+        var c2e =  new BigDecimal(c2.getExchangeRate().replace(",", "."));
         var c1c =  BigDecimal.valueOf(c1.getConversionRate());
         var c2c =  BigDecimal.valueOf(c2.getConversionRate());
 

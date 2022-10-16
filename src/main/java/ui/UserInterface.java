@@ -1,39 +1,44 @@
 package ui;
 
-import service.ICurrencyHandler;
+import Exceptions.InvalidInputException;
+import service.ICurrencyService;
+import validators.CustomValidator;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class UserInterface implements IUserInterface {
-    private Scanner sc;
-    private ICurrencyHandler currencyHandler;
+    private final Scanner sc;
+    private final ICurrencyService currencyHandler;
 
-    public UserInterface(Scanner sc, ICurrencyHandler currencyHandler) {
+    public UserInterface(Scanner sc, ICurrencyService currencyHandler) {
         this.sc = sc;
         this.currencyHandler = currencyHandler;
     }
 
     public void run() {
-        int i = 1;
-        while(i-- > 0) {
-            System.out.println("Which currency do you want to exchange? [code]");
-            String choice = sc.nextLine();
-            System.out.println("How much of it?");
-            BigDecimal chosenAmount = new BigDecimal(sc.nextLine()).setScale(2, RoundingMode.HALF_EVEN);
+        while(true) {
+            try {
+                System.out.println("\n(Insert empty string to exit)");
+                System.out.println("Which currency do you want to exchange? [code]\n");
+                String choice = prepUserInput(sc.nextLine());
+                if (CustomValidator.isEmptyInput(choice)) {
+                    break;
+                }
 
-            System.out.println("Which currency do you want to exchange to? [code]");
+                System.out.println("How much of it?");
+                String chosenAmount = prepUserInput(sc.nextLine());
 
-            String destCurrChoice = sc.nextLine();
-
-            if (chosenAmount.compareTo(BigDecimal.valueOf(0)) <= 0) {
-                System.out.println("Invalid amount!");
-                continue;
+                System.out.println("Which currency do you want to exchange to? [code]");
+                String destCurrChoice = prepUserInput(sc.nextLine());
+                var finalAmount = currencyHandler.exchange(choice, chosenAmount, destCurrChoice);
+                System.out.println("You'll receive: " + finalAmount);
             }
-
-            var finalAmount = currencyHandler.exchange(choice, chosenAmount, destCurrChoice);
-            System.out.println(finalAmount);
+            catch (InvalidInputException iie) {
+                System.out.println(iie.getMessage() + "\n\nTry again\n");
+            }
         }
+    }
+    private String prepUserInput(String input) {
+        return input.trim().toUpperCase();
     }
 }

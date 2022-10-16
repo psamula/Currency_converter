@@ -11,12 +11,9 @@ import java.util.List;
 public class CourseTable {
 
     @XmlElement(name = "pozycja")
-    private List<CustomCurrency> customCurrencyList = null;
+    private final List<CustomCurrency> customCurrencyList = null;
 
     public List<CustomCurrency> getCurrencyExchangeList() {
         return this.customCurrencyList;
-    }
-    public void setCurrencyExchangeList(List<CustomCurrency> customCurrencyList) {
-        this.customCurrencyList = customCurrencyList;
     }
 }
