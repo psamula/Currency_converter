@@ -9,8 +9,6 @@ public class Main {
     public static void main(String[] args) {
         IUserInterface ui = new UserInterface(new Scanner(System.in), new CurrencyService(CurrencyDao.getInstance()));
         ui.run();
-        String test = "ttt";
-
-
+        String t = "t";
     }
 }
